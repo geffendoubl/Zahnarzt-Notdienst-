@@ -71,24 +71,47 @@ export default function Termin() {
         </div>
 
         {/* Trust signals */}
-        <div
-          className="grid grid-cols-3 gap-3 mb-10"
-        >
-          {[
-            ['⭐ 4.5', 'Google', '55 Bewertungen'],
-            ['🔒 PRIVAT', 'Ordination', 'Direkt bezahlen'],
-            ['🕘 TÄGLICH', 'Geöffnet', 'Bis 21:00 Uhr'],
-          ].map(([em, label, sub]) => (
-            <div
-              key={label}
-              className="text-center p-3 rounded-sm"
-              style={{ background: 'rgba(244,247,255,0.9)', border: '1px solid rgba(29,78,216,0.08)' }}
-            >
-              <div className="text-sm mb-0.5" style={{ fontFamily: 'var(--font-headline)', color: '#1d4ed8', fontSize: '0.9rem', letterSpacing: '0.06em' }}>{em}</div>
-              <div className="text-xs" style={{ color: '#0f172a', fontFamily: 'var(--font-headline)', letterSpacing: '0.08em' }}>{label.toUpperCase()}</div>
-              <div className="text-xs mt-0.5" style={{ color: '#9ca3af', fontFamily: 'var(--font-mono)', fontSize: '0.65rem' }}>{sub}</div>
-            </div>
-          ))}
+        <div className="grid grid-cols-3 gap-3 mb-10">
+          {/* Rating */}
+          <div
+            className="text-center p-5 rounded-sm flex flex-col items-center"
+            style={{ background: '#ffffff', border: '1px solid rgba(29,78,216,0.1)', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true" style={{ marginBottom: '0.45rem' }}>
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <div style={{ fontFamily: 'var(--font-headline)', color: '#0f172a', fontSize: '1.6rem', letterSpacing: '0.02em', lineHeight: 1 }}>4.5</div>
+            <div style={{ color: '#0f172a', fontFamily: 'var(--font-headline)', letterSpacing: '0.1em', fontSize: '0.7rem', marginTop: '0.45rem' }}>GOOGLE</div>
+            <div style={{ color: '#9ca3af', fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.05em', marginTop: '0.15rem' }}>55 Bewertungen</div>
+          </div>
+
+          {/* Privat */}
+          <div
+            className="text-center p-5 rounded-sm flex flex-col items-center"
+            style={{ background: '#ffffff', border: '1px solid rgba(29,78,216,0.1)', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" strokeWidth="1.8" aria-hidden="true" style={{ marginBottom: '0.45rem' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+            </svg>
+            <div style={{ fontFamily: 'var(--font-headline)', color: '#0f172a', fontSize: '1.15rem', letterSpacing: '0.08em', lineHeight: 1 }}>PRIVAT</div>
+            <div style={{ color: '#0f172a', fontFamily: 'var(--font-headline)', letterSpacing: '0.1em', fontSize: '0.7rem', marginTop: '0.45rem' }}>ORDINATION</div>
+            <div style={{ color: '#9ca3af', fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.05em', marginTop: '0.15rem' }}>Direkt bezahlen</div>
+          </div>
+
+          {/* Hours */}
+          <div
+            className="text-center p-5 rounded-sm flex flex-col items-center"
+            style={{ background: '#ffffff', border: '1px solid rgba(29,78,216,0.1)', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="1.8" aria-hidden="true" style={{ marginBottom: '0.45rem' }}>
+              <circle cx="12" cy="12" r="9" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3.5 2" />
+            </svg>
+            <div style={{ fontFamily: 'var(--font-headline)', color: '#0f172a', fontSize: '1.15rem', letterSpacing: '0.08em', lineHeight: 1 }}>TÄGLICH</div>
+            <div style={{ color: '#0f172a', fontFamily: 'var(--font-headline)', letterSpacing: '0.1em', fontSize: '0.7rem', marginTop: '0.45rem' }}>GEÖFFNET</div>
+            <div style={{ color: '#9ca3af', fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.05em', marginTop: '0.15rem' }}>Bis 21:00 Uhr</div>
+          </div>
         </div>
 
         {/* Primary CTAs */}
