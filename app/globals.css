@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #080810;
-  --color-electric: #1aedff;
-  --color-emergency: #ff3e2f;
-  --color-cream: #f5f0e8;
-  --color-slate: #1c1c2e;
-  --color-slate-light: #2a2a42;
-  --color-muted: #6b6b8a;
+  /* Professional night palette — navy, trusted blue, confident red */
+  --color-ink: #0d1b2e;
+  --color-blue: #4b8ef5;
+  --color-urgent: #e04747;
+  --color-cream: #eef3ff;
+  --color-slate: #152234;
+  --color-slate-light: #1c2e44;
+  --color-muted: #5d7896;
 
   --font-headline: var(--font-bebas), "Bebas Neue", sans-serif;
   --font-mono: var(--font-space-mono), "Space Mono", monospace;
@@ -25,21 +26,21 @@ html {
 }
 
 body {
-  background-color: #080810;
-  color: #f5f0e8;
+  background-color: #0d1b2e;
+  color: #eef3ff;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* Noise grain overlay */
+/* Very subtle noise — texture, not grain */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.04;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 180px 180px;
@@ -47,20 +48,8 @@ body::after {
 
 /* ─── Keyframes ─────────────────────────────────────────── */
 @keyframes tooth-breathe {
-  0%, 100% { opacity: 0.055; transform: scale(1) translateY(0); }
-  50%       { opacity: 0.085; transform: scale(1.013) translateY(-8px); }
-}
-
-@keyframes pulse-ring {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 62, 47, 0.65); }
-  70%  { box-shadow: 0 0 0 20px rgba(255, 62, 47, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 62, 47, 0); }
-}
-
-@keyframes pulse-ring-electric {
-  0%   { box-shadow: 0 0 0 0 rgba(26, 237, 255, 0.5); }
-  70%  { box-shadow: 0 0 0 18px rgba(26, 237, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(26, 237, 255, 0); }
+  0%, 100% { opacity: 0.04; transform: scale(1) translateY(0); }
+  50%       { opacity: 0.065; transform: scale(1.01) translateY(-5px); }
 }
 
 @keyframes blink-cursor {
@@ -70,11 +59,11 @@ body::after {
 
 @keyframes dot-pulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.35; }
+  50%       { opacity: 0.4; }
 }
 
 @keyframes slide-down {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -84,26 +73,24 @@ body::after {
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ─── Animation classes ─────────────────────────────────── */
-.animate-tooth-breathe     { animation: tooth-breathe 5s ease-in-out infinite; }
-.animate-pulse-ring        { animation: pulse-ring 2.2s ease-out infinite; }
-.animate-pulse-ring-el     { animation: pulse-ring-electric 2.6s ease-out infinite; }
-.animate-blink             { animation: blink-cursor 1s step-end infinite; }
-.animate-dot-pulse         { animation: dot-pulse 1.8s ease-in-out infinite; }
-.animate-slide-down        { animation: slide-down 0.35s ease-out forwards; }
-.animate-fade-in           { animation: fade-in 0.4s ease-out forwards; }
-.animate-fade-up           { animation: fade-up 0.5s ease-out forwards; }
+.animate-tooth-breathe  { animation: tooth-breathe 6s ease-in-out infinite; }
+.animate-blink          { animation: blink-cursor 1s step-end infinite; }
+.animate-dot-pulse      { animation: dot-pulse 2s ease-in-out infinite; }
+.animate-slide-down     { animation: slide-down 0.3s ease-out forwards; }
+.animate-fade-in        { animation: fade-in 0.4s ease-out forwards; }
+.animate-fade-up        { animation: fade-up 0.5s ease-out forwards; }
 
 /* ─── Layout helpers ────────────────────────────────────── */
 .section-number {
   font-family: var(--font-headline);
   font-size: clamp(7rem, 18vw, 15rem);
   line-height: 0.9;
-  color: rgba(26, 237, 255, 0.035);
+  color: rgba(75, 142, 245, 0.04);
   position: absolute;
   right: -0.05em;
   top: -0.12em;
@@ -115,41 +102,40 @@ body::after {
 
 /* ─── Component helpers ──────────────────────────────────── */
 .card-dark {
-  background: rgba(28, 28, 46, 0.55);
-  border: 1px solid rgba(26, 237, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(21, 34, 52, 0.7);
+  border: 1px solid rgba(75, 142, 245, 0.1);
 }
 
+.divider-blue {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(75, 142, 245, 0.2), transparent);
+}
+
+/* legacy alias kept so pages still compile */
 .divider-electric {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(26, 237, 255, 0.35), transparent);
+  background: linear-gradient(90deg, transparent, rgba(75, 142, 245, 0.2), transparent);
 }
-
-.glow-electric     { box-shadow: 0 0 40px rgba(26, 237, 255, 0.22); }
-.glow-electric-sm  { box-shadow: 0 0 20px rgba(26, 237, 255, 0.15); }
-.glow-emergency    { box-shadow: 0 0 40px rgba(255, 62, 47, 0.25); }
-
-.text-shadow-electric { text-shadow: 0 0 80px rgba(26, 237, 255, 0.5); }
 
 /* ─── Forms ──────────────────────────────────────────────── */
 input, textarea, select {
-  background: rgba(28, 28, 46, 0.8);
-  border: 1px solid rgba(26, 237, 255, 0.2);
-  color: #f5f0e8;
+  background: rgba(21, 34, 52, 0.8);
+  border: 1px solid rgba(75, 142, 245, 0.18);
+  color: #eef3ff;
   font-family: var(--font-body);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: rgba(26, 237, 255, 0.55);
-  box-shadow: 0 0 0 3px rgba(26, 237, 255, 0.09);
+  border-color: rgba(75, 142, 245, 0.5);
+  box-shadow: 0 0 0 3px rgba(75, 142, 245, 0.08);
 }
-select option { background: #1c1c2e; }
-input[type="checkbox"] { accent-color: #1aedff; }
-::placeholder { color: rgba(107, 107, 138, 0.8); }
+select option { background: #152234; }
+input[type="checkbox"] { accent-color: #4b8ef5; }
+::placeholder { color: rgba(93, 120, 150, 0.8); }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: #080810; }
-::-webkit-scrollbar-thumb { background: rgba(26, 237, 255, 0.22); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(26, 237, 255, 0.42); }
+::-webkit-scrollbar-track { background: #0d1b2e; }
+::-webkit-scrollbar-thumb { background: rgba(75, 142, 245, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(75, 142, 245, 0.38); }

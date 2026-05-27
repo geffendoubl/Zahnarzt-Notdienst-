@@ -25,8 +25,8 @@ export function PrivatDismissible() {
       className="fixed bottom-24 left-4 right-4 sm:left-auto sm:right-20 sm:w-[340px] z-40 animate-slide-down rounded-lg p-5"
       style={{
         background: 'rgba(28, 28, 46, 0.97)',
-        border: '1px solid rgba(26, 237, 255, 0.3)',
-        boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 40px rgba(26,237,255,0.08)',
+        border: '1px solid rgba(75, 142, 245, 0.3)',
+        boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 40px rgba(75,142,245,0.08)',
       }}
       role="dialog"
       aria-label="Hinweis Privatordination"
@@ -36,9 +36,9 @@ export function PrivatDismissible() {
           <span
             className="text-xs px-2 py-0.5 rounded font-bold tracking-widest"
             style={{
-              background: 'rgba(26,237,255,0.12)',
-              color: '#1aedff',
-              border: '1px solid rgba(26,237,255,0.3)',
+              background: 'rgba(75,142,245,0.12)',
+              color: '#4b8ef5',
+              border: '1px solid rgba(75,142,245,0.3)',
               fontFamily: 'var(--font-mono)',
             }}
           >
@@ -63,7 +63,7 @@ export function PrivatDismissible() {
       <a
         href="/leistungen#privat"
         className="text-xs underline underline-offset-2 transition-colors"
-        style={{ color: '#1aedff' }}
+        style={{ color: '#4b8ef5' }}
         onClick={dismiss}
       >
         Wie funktioniert die Rückerstattung? →

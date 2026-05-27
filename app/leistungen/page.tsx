@@ -49,14 +49,14 @@ const leistungen = [
 
 export default function Leistungen() {
   return (
-    <div style={{ background: '#080810' }}>
+    <div style={{ background: '#0d1b2e' }}>
       {/* Header */}
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto relative">
           <span className="section-number" aria-hidden="true">02</span>
           <span
             className="text-xs tracking-[0.25em] mb-3 block"
-            style={{ fontFamily: 'var(--font-mono)', color: '#1aedff' }}
+            style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}
           >
             LEISTUNGEN
           </span>
@@ -65,14 +65,14 @@ export default function Leistungen() {
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(3rem, 8vw, 7rem)',
               lineHeight: 0.92,
-              color: '#f5f0e8',
+              color: '#eef3ff',
               letterSpacing: '0.01em',
             }}
           >
             WAS WIR<br />
-            <span style={{ color: '#1aedff' }}>BEHANDELN.</span>
+            <span style={{ color: '#4b8ef5' }}>BEHANDELN.</span>
           </h1>
-          <p className="mt-5 text-base leading-relaxed max-w-lg" style={{ color: 'rgba(245,240,232,0.6)' }}>
+          <p className="mt-5 text-base leading-relaxed max-w-lg" style={{ color: 'rgba(238,243,255,0.6)' }}>
             Akutversorgung, keine Wartelisten. Privatordination — Sie zahlen direkt und rechnen mit Ihrer Kasse ab.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Leistungen() {
               >
                 <div
                   className="text-2xl transition-transform group-hover:scale-110"
-                  style={{ color: '#1aedff' }}
+                  style={{ color: '#4b8ef5' }}
                   aria-hidden="true"
                 >
                   {l.icon}
@@ -99,15 +99,15 @@ export default function Leistungen() {
                     fontFamily: 'var(--font-headline)',
                     fontSize: '1.4rem',
                     letterSpacing: '0.04em',
-                    color: '#f5f0e8',
+                    color: '#eef3ff',
                   }}
                 >
                   {l.title.toUpperCase()}
                 </h2>
-                <p className="text-sm font-medium" style={{ color: 'rgba(245,240,232,0.85)' }}>
+                <p className="text-sm font-medium" style={{ color: 'rgba(238,243,255,0.85)' }}>
                   {l.short}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.45)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.45)' }}>
                   {l.details}
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function Leistungen() {
           <div className="relative mb-10">
             <span
               className="text-xs tracking-[0.25em] mb-3 block"
-              style={{ fontFamily: 'var(--font-mono)', color: '#1aedff' }}
+              style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}
             >
               WIE FUNKTIONIERT PRIVAT?
             </span>
@@ -132,7 +132,7 @@ export default function Leistungen() {
               style={{
                 fontFamily: 'var(--font-headline)',
                 fontSize: 'clamp(2rem, 5vw, 4rem)',
-                color: '#f5f0e8',
+                color: '#eef3ff',
                 letterSpacing: '0.02em',
               }}
             >
@@ -166,11 +166,11 @@ export default function Leistungen() {
               <details
                 key={i}
                 className="group border-b"
-                style={{ borderColor: 'rgba(26,237,255,0.1)' }}
+                style={{ borderColor: 'rgba(75,142,245,0.1)' }}
               >
                 <summary
                   className="py-4 cursor-pointer flex items-center justify-between gap-4 list-none select-none"
-                  style={{ color: '#f5f0e8' }}
+                  style={{ color: '#eef3ff' }}
                 >
                   <span
                     className="text-sm font-medium"
@@ -180,13 +180,13 @@ export default function Leistungen() {
                   </span>
                   <span
                     className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm transition-transform group-open:rotate-45"
-                    style={{ background: 'rgba(26,237,255,0.08)', color: '#1aedff' }}
+                    style={{ background: 'rgba(75,142,245,0.08)', color: '#4b8ef5' }}
                   >
                     +
                   </span>
                 </summary>
                 <div className="pb-4 pr-10">
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.6)' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.6)' }}>
                     {item.a}
                   </p>
                 </div>
@@ -196,16 +196,16 @@ export default function Leistungen() {
 
           <div
             className="mt-10 p-5 rounded-sm"
-            style={{ background: 'rgba(255,62,47,0.07)', border: '1px solid rgba(255,62,47,0.2)' }}
+            style={{ background: 'rgba(224,71,71,0.07)', border: '1px solid rgba(224,71,71,0.2)' }}
           >
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.75)' }}>
-              <strong style={{ color: '#f5f0e8' }}>Hinweis:</strong> Als Privatordination zahlen Sie direkt vor Ort.
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.75)' }}>
+              <strong style={{ color: '#eef3ff' }}>Hinweis:</strong> Als Privatordination zahlen Sie direkt vor Ort.
               Ihre Krankenkasse erstattet in der Regel einen Teil der Kosten. Bitte bringen Sie Ihre E-Card mit.
             </p>
             <a
               href={PHONE_HREF}
               className="inline-flex items-center gap-2 mt-4 py-2.5 px-5 rounded-sm no-underline font-bold text-sm transition-all hover:brightness-110"
-              style={{ background: '#ff3e2f', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '0.95rem', letterSpacing: '0.06em' }}
+              style={{ background: '#e04747', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '0.95rem', letterSpacing: '0.06em' }}
             >
               JETZT ANRUFEN
             </a>

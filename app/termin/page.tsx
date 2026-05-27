@@ -31,14 +31,14 @@ export default function Termin() {
 
   return (
     /* No full nav/footer on this page — pure conversion */
-    <div style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(26,237,255,0.04) 0%, transparent 60%), #080810', minHeight: '100dvh' }}>
+    <div style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(75,142,245,0.04) 0%, transparent 60%), #0d1b2e', minHeight: '100dvh' }}>
       <div className="max-w-2xl mx-auto px-4 py-14">
 
         {/* Trust header */}
         <div className="text-center mb-10">
           <div
             className="text-xs tracking-[0.25em] mb-4"
-            style={{ fontFamily: 'var(--font-mono)', color: '#1aedff' }}
+            style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}
           >
             PRIVATORDINATION · 1020 WIEN · TÄGLICH GEÖFFNET
           </div>
@@ -47,12 +47,12 @@ export default function Termin() {
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(2.8rem, 8vw, 6rem)',
               lineHeight: 0.9,
-              color: '#f5f0e8',
+              color: '#eef3ff',
               letterSpacing: '0.01em',
             }}
           >
             ZAHNARZT<br />
-            <span style={{ color: '#ff3e2f' }}>NOTDIENST</span><br />
+            <span style={{ color: '#e04747' }}>NOTDIENST</span><br />
             WIEN
           </h1>
           {open && closeTime && (
@@ -82,11 +82,11 @@ export default function Termin() {
             <div
               key={label}
               className="text-center p-3 rounded-sm"
-              style={{ background: 'rgba(28,28,46,0.6)', border: '1px solid rgba(26,237,255,0.1)' }}
+              style={{ background: 'rgba(21,34,52,0.6)', border: '1px solid rgba(75,142,245,0.1)' }}
             >
-              <div className="text-sm mb-0.5" style={{ fontFamily: 'var(--font-headline)', color: '#1aedff', fontSize: '0.9rem', letterSpacing: '0.06em' }}>{em}</div>
-              <div className="text-xs" style={{ color: '#f5f0e8', fontFamily: 'var(--font-headline)', letterSpacing: '0.08em' }}>{label.toUpperCase()}</div>
-              <div className="text-xs mt-0.5" style={{ color: 'rgba(245,240,232,0.4)', fontFamily: 'var(--font-mono)', fontSize: '0.65rem' }}>{sub}</div>
+              <div className="text-sm mb-0.5" style={{ fontFamily: 'var(--font-headline)', color: '#4b8ef5', fontSize: '0.9rem', letterSpacing: '0.06em' }}>{em}</div>
+              <div className="text-xs" style={{ color: '#eef3ff', fontFamily: 'var(--font-headline)', letterSpacing: '0.08em' }}>{label.toUpperCase()}</div>
+              <div className="text-xs mt-0.5" style={{ color: 'rgba(238,243,255,0.4)', fontFamily: 'var(--font-mono)', fontSize: '0.65rem' }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -95,8 +95,8 @@ export default function Termin() {
         <div className="flex flex-col gap-3 mb-10">
           <a
             href={PHONE_HREF}
-            className="flex items-center justify-center gap-3 py-5 rounded-sm no-underline font-bold transition-all hover:brightness-110 active:scale-[0.98] animate-pulse-ring"
-            style={{ background: '#ff3e2f', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.5rem', letterSpacing: '0.08em', boxShadow: '0 4px 30px rgba(255,62,47,0.35)' }}
+            className="flex items-center justify-center gap-3 py-5 rounded-sm no-underline font-bold transition-all hover:brightness-110 active:scale-[0.98]"
+            style={{ background: '#e04747', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.5rem', letterSpacing: '0.08em',  }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -108,7 +108,7 @@ export default function Termin() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 py-4 rounded-sm no-underline font-bold transition-all hover:brightness-110 active:scale-[0.98]"
-            style={{ background: 'rgba(26,237,255,0.1)', border: '1px solid rgba(26,237,255,0.35)', color: '#1aedff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.08em' }}
+            style={{ background: 'rgba(75,142,245,0.1)', border: '1px solid rgba(75,142,245,0.35)', color: '#4b8ef5', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.08em' }}
           >
             WHATSAPP SCHREIBEN
           </a>
@@ -119,10 +119,10 @@ export default function Termin() {
         {/* Privat explainer */}
         <div
           className="p-4 rounded-sm mb-10"
-          style={{ background: 'rgba(26,237,255,0.05)', border: '1px solid rgba(26,237,255,0.15)' }}
+          style={{ background: 'rgba(75,142,245,0.05)', border: '1px solid rgba(75,142,245,0.15)' }}
         >
-          <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.7)' }}>
-            <strong style={{ color: '#f5f0e8' }}>Privatordination:</strong> Als Privatordination zahlen Sie direkt vor Ort.
+          <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.7)' }}>
+            <strong style={{ color: '#eef3ff' }}>Privatordination:</strong> Als Privatordination zahlen Sie direkt vor Ort.
             Ihre Krankenkasse (ÖGK, BVAEB, SVS) erstattet in der Regel einen Teil der Kosten zurück.
             Wir stellen Ihnen eine Honorarnote aus.
           </p>
@@ -140,20 +140,20 @@ export default function Termin() {
             >
               NACHRICHT GESENDET
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.65)' }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.65)' }}>
               Wir melden uns so schnell wie möglich. Bei akuten Beschwerden rufen Sie bitte direkt an:{' '}
-              <a href={PHONE_HREF} style={{ color: '#ff3e2f', textDecoration: 'none' }}>+43 676 844116204</a>
+              <a href={PHONE_HREF} style={{ color: '#e04747', textDecoration: 'none' }}>+43 676 844116204</a>
             </p>
           </div>
         ) : (
           <div className="card-dark rounded-sm p-6">
             <h2
               className="mb-1"
-              style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', letterSpacing: '0.08em', color: '#f5f0e8' }}
+              style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', letterSpacing: '0.08em', color: '#eef3ff' }}
             >
               RÜCKRUF ANFRAGEN
             </h2>
-            <p className="text-xs mb-5" style={{ fontFamily: 'var(--font-mono)', color: 'rgba(245,240,232,0.35)' }}>
+            <p className="text-xs mb-5" style={{ fontFamily: 'var(--font-mono)', color: 'rgba(238,243,255,0.35)' }}>
               Außerhalb der Öffnungszeiten — wir melden uns beim nächsten Öffnen.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
@@ -172,9 +172,9 @@ export default function Termin() {
               <input name="rueckruf" type="text" placeholder="Bevorzugte Rückrufzeit (z.B. Mo 10–12 Uhr)" className="px-3 py-3 rounded-sm text-sm" />
               <label className="flex items-start gap-2.5 cursor-pointer mt-1">
                 <input type="checkbox" name="dsgvo" required className="mt-0.5 shrink-0" />
-                <span className="text-xs leading-relaxed" style={{ color: 'rgba(245,240,232,0.45)' }}>
+                <span className="text-xs leading-relaxed" style={{ color: 'rgba(238,243,255,0.45)' }}>
                   Ich stimme der{' '}
-                  <a href="/datenschutz" style={{ color: '#1aedff', textDecoration: 'none' }}>Datenschutzerklärung</a>{' '}
+                  <a href="/datenschutz" style={{ color: '#4b8ef5', textDecoration: 'none' }}>Datenschutzerklärung</a>{' '}
                   zu. Als Privatordination zahlen Sie direkt vor Ort.
                 </span>
               </label>
@@ -182,7 +182,7 @@ export default function Termin() {
                 type="submit"
                 disabled={submitting}
                 className="py-3.5 rounded-sm font-bold text-sm transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
-                style={{ background: '#ff3e2f', color: '#fff', fontFamily: 'var(--font-headline)', fontSize: '1.05rem', letterSpacing: '0.08em' }}
+                style={{ background: '#e04747', color: '#fff', fontFamily: 'var(--font-headline)', fontSize: '1.05rem', letterSpacing: '0.08em' }}
               >
                 {submitting ? 'WIRD GESENDET...' : 'RÜCKRUF ANFRAGEN'}
               </button>

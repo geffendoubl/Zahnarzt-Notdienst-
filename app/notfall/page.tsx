@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const emergencies = [
   {
     level: 'SOFORT',
-    color: '#ff3e2f',
+    color: '#e04747',
     title: 'Hochnotfall',
     cases: [
       'Starke, anhaltende Zahnschmerzen',
@@ -37,7 +37,7 @@ const emergencies = [
   },
   {
     level: 'PLANBAR',
-    color: '#1aedff',
+    color: '#4b8ef5',
     title: 'Weniger dringend',
     cases: [
       'Leichte Empfindlichkeit',
@@ -83,7 +83,7 @@ export default function Notfall() {
   return (
     <div
       style={{
-        background: 'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,62,47,0.05) 0%, transparent 60%), #080810',
+        background: 'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(224,71,71,0.05) 0%, transparent 60%), #0d1b2e',
       }}
     >
       {/* Header */}
@@ -93,7 +93,7 @@ export default function Notfall() {
             <span className="section-number" aria-hidden="true">!</span>
             <span
               className="text-xs tracking-[0.25em] mb-3 block"
-              style={{ fontFamily: 'var(--font-mono)', color: '#ff3e2f' }}
+              style={{ fontFamily: 'var(--font-mono)', color: '#e04747' }}
             >
               NOTFALLHILFE
             </span>
@@ -102,14 +102,14 @@ export default function Notfall() {
                 fontFamily: 'var(--font-headline)',
                 fontSize: 'clamp(3rem, 8vw, 7rem)',
                 lineHeight: 0.92,
-                color: '#f5f0e8',
+                color: '#eef3ff',
                 letterSpacing: '0.01em',
               }}
             >
               ZAHNNOTFALL?<br />
-              <span style={{ color: '#ff3e2f' }}>WIR HELFEN.</span>
+              <span style={{ color: '#e04747' }}>WIR HELFEN.</span>
             </h1>
-            <p className="mt-5 text-base leading-relaxed max-w-xl" style={{ color: 'rgba(245,240,232,0.6)' }}>
+            <p className="mt-5 text-base leading-relaxed max-w-xl" style={{ color: 'rgba(238,243,255,0.6)' }}>
               Keine Panik. Hier finden Sie Sofortmaßnahmen, was Sie mitbringen sollten, und wie Sie uns am schnellsten erreichen.
             </p>
           </div>
@@ -118,8 +118,8 @@ export default function Notfall() {
           <div className="flex flex-col sm:flex-row gap-3 mt-8 max-w-lg">
             <a
               href={PHONE_HREF}
-              className="flex-1 flex items-center justify-center gap-3 py-4 px-5 rounded-sm no-underline font-bold transition-all hover:brightness-110 animate-pulse-ring"
-              style={{ background: '#ff3e2f', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.06em' }}
+              className="flex-1 flex items-center justify-center gap-3 py-4 px-5 rounded-sm no-underline font-bold transition-all hover:brightness-110"
+              style={{ background: '#e04747', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.06em' }}
             >
               JETZT ANRUFEN
             </a>
@@ -128,7 +128,7 @@ export default function Notfall() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-3 py-4 px-5 rounded-sm no-underline font-bold transition-all hover:brightness-110"
-              style={{ background: 'rgba(26,237,255,0.1)', border: '1px solid rgba(26,237,255,0.4)', color: '#1aedff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.06em' }}
+              style={{ background: 'rgba(75,142,245,0.1)', border: '1px solid rgba(75,142,245,0.4)', color: '#4b8ef5', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.35rem', letterSpacing: '0.06em' }}
             >
               WHATSAPP
             </a>
@@ -143,7 +143,7 @@ export default function Notfall() {
         <div className="max-w-6xl mx-auto">
           <h2
             className="mb-10"
-            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#f5f0e8', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#eef3ff', letterSpacing: '0.05em' }}
           >
             DRINGLICHKEIT EINSCHÄTZEN
           </h2>
@@ -162,13 +162,13 @@ export default function Notfall() {
                 </div>
                 <h3
                   className="mb-4"
-                  style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', letterSpacing: '0.05em', color: '#f5f0e8' }}
+                  style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', letterSpacing: '0.05em', color: '#eef3ff' }}
                 >
                   {e.title.toUpperCase()}
                 </h3>
                 <ul className="flex flex-col gap-2 mb-5">
                   {e.cases.map((c) => (
-                    <li key={c} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(245,240,232,0.65)' }}>
+                    <li key={c} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(238,243,255,0.65)' }}>
                       <span style={{ color: e.color, marginTop: '3px' }}>▸</span>
                       {c}
                     </li>
@@ -184,11 +184,11 @@ export default function Notfall() {
       </section>
 
       {/* First Aid */}
-      <section className="py-16 px-4 sm:px-6" style={{ background: '#1c1c2e' }}>
+      <section className="py-16 px-4 sm:px-6" style={{ background: '#152234' }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="mb-10"
-            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#f5f0e8', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#eef3ff', letterSpacing: '0.05em' }}
           >
             ERSTE HILFE — BEVOR SIE BEI UNS ANKOMMEN
           </h2>
@@ -201,18 +201,18 @@ export default function Notfall() {
                     fontFamily: 'var(--font-headline)',
                     fontSize: '1.25rem',
                     letterSpacing: '0.06em',
-                    color: '#1aedff',
-                    borderBottom: '1px solid rgba(26,237,255,0.2)',
+                    color: '#4b8ef5',
+                    borderBottom: '1px solid rgba(75,142,245,0.2)',
                   }}
                 >
                   {item.title.toUpperCase()}
                 </h3>
                 <ol className="flex flex-col gap-3">
                   {item.steps.map((step, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm" style={{ color: 'rgba(245,240,232,0.7)' }}>
+                    <li key={i} className="flex items-start gap-3 text-sm" style={{ color: 'rgba(238,243,255,0.7)' }}>
                       <span
                         className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs"
-                        style={{ background: 'rgba(26,237,255,0.1)', color: '#1aedff', fontFamily: 'var(--font-mono)' }}
+                        style={{ background: 'rgba(75,142,245,0.1)', color: '#4b8ef5', fontFamily: 'var(--font-mono)' }}
                       >
                         {i + 1}
                       </span>
@@ -231,7 +231,7 @@ export default function Notfall() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="mb-8"
-            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#f5f0e8', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#eef3ff', letterSpacing: '0.05em' }}
           >
             WAS MITBRINGEN
           </h2>
@@ -248,10 +248,10 @@ export default function Notfall() {
                 key={item}
                 className="flex items-start gap-3 p-4 rounded-sm card-dark"
               >
-                <span style={{ color: '#1aedff', fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
+                <span style={{ color: '#4b8ef5', fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
                 <div>
-                  <div className="text-sm font-medium" style={{ color: '#f5f0e8' }}>{item}</div>
-                  <div className="text-xs mt-0.5" style={{ color: 'rgba(245,240,232,0.45)', fontFamily: 'var(--font-mono)' }}>{note}</div>
+                  <div className="text-sm font-medium" style={{ color: '#eef3ff' }}>{item}</div>
+                  <div className="text-xs mt-0.5" style={{ color: 'rgba(238,243,255,0.45)', fontFamily: 'var(--font-mono)' }}>{note}</div>
                 </div>
               </div>
             ))}

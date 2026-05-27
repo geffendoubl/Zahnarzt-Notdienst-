@@ -62,7 +62,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${count} von 5 Sternen`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={i <= count ? '#f59e0b' : 'rgba(245,240,232,0.15)'} aria-hidden="true">
+        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={i <= count ? '#f59e0b' : 'rgba(238,243,255,0.15)'} aria-hidden="true">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -72,14 +72,14 @@ function Stars({ count }: { count: number }) {
 
 export default function Bewertungen() {
   return (
-    <div style={{ background: '#080810' }}>
+    <div style={{ background: '#0d1b2e' }}>
       {/* Header */}
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto relative">
           <span className="section-number" aria-hidden="true">05</span>
           <span
             className="text-xs tracking-[0.25em] mb-3 block"
-            style={{ fontFamily: 'var(--font-mono)', color: '#1aedff' }}
+            style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}
           >
             BEWERTUNGEN
           </span>
@@ -88,12 +88,12 @@ export default function Bewertungen() {
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(3rem, 8vw, 7rem)',
               lineHeight: 0.92,
-              color: '#f5f0e8',
+              color: '#eef3ff',
               letterSpacing: '0.01em',
             }}
           >
             WAS PATIENTEN<br />
-            <span style={{ color: '#1aedff' }}>SAGEN.</span>
+            <span style={{ color: '#4b8ef5' }}>SAGEN.</span>
           </h1>
 
           {/* Rating badge */}
@@ -101,8 +101,8 @@ export default function Bewertungen() {
             <div
               className="flex items-center gap-3 px-5 py-3 rounded-sm glow-electric-sm"
               style={{
-                background: 'rgba(26,237,255,0.06)',
-                border: '1px solid rgba(26,237,255,0.25)',
+                background: 'rgba(75,142,245,0.06)',
+                border: '1px solid rgba(75,142,245,0.25)',
               }}
             >
               <span
@@ -110,7 +110,7 @@ export default function Bewertungen() {
                   fontFamily: 'var(--font-headline)',
                   fontSize: '3rem',
                   lineHeight: 1,
-                  color: '#f5f0e8',
+                  color: '#eef3ff',
                 }}
               >
                 4.5
@@ -126,7 +126,7 @@ export default function Bewertungen() {
                     <defs>
                       <linearGradient id="half">
                         <stop offset="50%" stopColor="#f59e0b" />
-                        <stop offset="50%" stopColor="rgba(245,240,232,0.15)" />
+                        <stop offset="50%" stopColor="rgba(238,243,255,0.15)" />
                       </linearGradient>
                     </defs>
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#half)" />
@@ -134,7 +134,7 @@ export default function Bewertungen() {
                 </div>
                 <div
                   className="text-xs"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'rgba(245,240,232,0.5)' }}
+                  style={{ fontFamily: 'var(--font-mono)', color: 'rgba(238,243,255,0.5)' }}
                 >
                   55 GOOGLE-BEWERTUNGEN
                 </div>
@@ -148,7 +148,7 @@ export default function Bewertungen() {
               className="text-sm no-underline transition-all hover:brightness-110"
               style={{
                 fontFamily: 'var(--font-mono)',
-                color: '#1aedff',
+                color: '#4b8ef5',
                 textDecoration: 'none',
                 fontSize: '0.72rem',
                 letterSpacing: '0.1em',
@@ -171,17 +171,17 @@ export default function Bewertungen() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-sm font-medium" style={{ color: '#f5f0e8' }}>{r.name}</div>
+                    <div className="text-sm font-medium" style={{ color: '#eef3ff' }}>{r.name}</div>
                     <div
                       className="text-xs mt-0.5"
-                      style={{ fontFamily: 'var(--font-mono)', color: 'rgba(245,240,232,0.35)' }}
+                      style={{ fontFamily: 'var(--font-mono)', color: 'rgba(238,243,255,0.35)' }}
                     >
                       {r.date}
                     </div>
                   </div>
                   <Stars count={r.rating} />
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.65)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.65)' }}>
                   „{r.text}"
                 </p>
               </div>
@@ -190,9 +190,9 @@ export default function Bewertungen() {
 
           <div
             className="mt-10 p-6 rounded-sm text-center"
-            style={{ background: '#1c1c2e', border: '1px solid rgba(26,237,255,0.12)' }}
+            style={{ background: '#152234', border: '1px solid rgba(75,142,245,0.12)' }}
           >
-            <p className="text-sm mb-4" style={{ color: 'rgba(245,240,232,0.55)' }}>
+            <p className="text-sm mb-4" style={{ color: 'rgba(238,243,255,0.55)' }}>
               Sie waren Patient und möchten eine Bewertung hinterlassen?
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -201,14 +201,14 @@ export default function Bewertungen() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2.5 px-6 rounded-sm no-underline text-sm font-bold transition-all hover:brightness-110"
-                style={{ background: '#1aedff', color: '#080810', textDecoration: 'none', fontFamily: 'var(--font-headline)', letterSpacing: '0.06em' }}
+                style={{ background: '#4b8ef5', color: '#0d1b2e', textDecoration: 'none', fontFamily: 'var(--font-headline)', letterSpacing: '0.06em' }}
               >
                 GOOGLE BEWERTUNG SCHREIBEN
               </a>
               <a
                 href={PHONE_HREF}
                 className="py-2.5 px-6 rounded-sm no-underline text-sm font-bold transition-all hover:brightness-110"
-                style={{ background: '#ff3e2f', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', letterSpacing: '0.06em' }}
+                style={{ background: '#e04747', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', letterSpacing: '0.06em' }}
               >
                 TERMIN BUCHEN
               </a>

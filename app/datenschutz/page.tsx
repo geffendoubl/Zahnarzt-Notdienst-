@@ -7,18 +7,18 @@ export const metadata: Metadata = {
 
 export default function Datenschutz() {
   return (
-    <div style={{ background: '#080810' }}>
+    <div style={{ background: '#0d1b2e' }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-        <span className="text-xs tracking-[0.25em] mb-4 block" style={{ fontFamily: 'var(--font-mono)', color: '#1aedff' }}>
+        <span className="text-xs tracking-[0.25em] mb-4 block" style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}>
           RECHTLICHES
         </span>
-        <h1 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#f5f0e8', letterSpacing: '0.02em', marginBottom: '3rem' }}>
+        <h1 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#eef3ff', letterSpacing: '0.02em', marginBottom: '3rem' }}>
           DATENSCHUTZ&shy;ERKLÄRUNG
         </h1>
 
-        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'rgba(245,240,232,0.7)' }}>
+        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'rgba(238,243,255,0.7)' }}>
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               1. VERANTWORTLICHER
             </h2>
             <p>
@@ -32,7 +32,7 @@ export default function Datenschutz() {
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               2. RECHTSGRUNDLAGE (DSGVO ART. 6)
             </h2>
             <ul className="space-y-2 list-none">
@@ -43,8 +43,8 @@ export default function Datenschutz() {
                 ['Websitefunktionalität / Sicherheit', 'Art. 6 Abs. 1 lit. f (berechtigtes Interesse)'],
               ].map(([zweck, basis]) => (
                 <li key={zweck} className="flex gap-3">
-                  <span style={{ color: 'rgba(26,237,255,0.5)' }}>▸</span>
-                  <span><strong style={{ color: '#f5f0e8' }}>{zweck}:</strong> {basis}</span>
+                  <span style={{ color: 'rgba(75,142,245,0.5)' }}>▸</span>
+                  <span><strong style={{ color: '#eef3ff' }}>{zweck}:</strong> {basis}</span>
                 </li>
               ))}
             </ul>
@@ -53,26 +53,26 @@ export default function Datenschutz() {
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               3. WELCHE DATEN VERARBEITEN WIR?
             </h2>
             <p className="mb-3">Beim Ausfüllen des Kontaktformulars:</p>
             <ul className="space-y-1 list-none">
               {['Name', 'Telefonnummer', 'Anliegen (Art des Zahnproblems)', 'Bevorzugte Rückrufzeit (optional)'].map(d => (
                 <li key={d} className="flex gap-3">
-                  <span style={{ color: 'rgba(26,237,255,0.5)' }}>·</span>{d}
+                  <span style={{ color: 'rgba(75,142,245,0.5)' }}>·</span>{d}
                 </li>
               ))}
             </ul>
             <p className="mt-3">
-              Wir speichern <strong style={{ color: '#f5f0e8' }}>keine Gesundheitsdaten</strong> ohne gesonderte Einwilligung. Das Anliegen (z.B. „akute Schmerzen") wird nicht als Patientenakte gespeichert.
+              Wir speichern <strong style={{ color: '#eef3ff' }}>keine Gesundheitsdaten</strong> ohne gesonderte Einwilligung. Das Anliegen (z.B. „akute Schmerzen") wird nicht als Patientenakte gespeichert.
             </p>
           </section>
 
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               4. AUFTRAGSVERARBEITER / DRITTANBIETER
             </h2>
             <ul className="space-y-3 list-none">
@@ -82,8 +82,8 @@ export default function Datenschutz() {
                 ['Cal.com (optional)', 'Terminbuchung', 'EU-konform', 'cal.com/privacy'],
               ].map(([name, zweck, server, _]) => (
                 <li key={name} className="flex gap-3">
-                  <span style={{ color: 'rgba(26,237,255,0.5)' }}>▸</span>
-                  <span><strong style={{ color: '#f5f0e8' }}>{name}</strong> — {zweck} ({server})</span>
+                  <span style={{ color: 'rgba(75,142,245,0.5)' }}>▸</span>
+                  <span><strong style={{ color: '#eef3ff' }}>{name}</strong> — {zweck} ({server})</span>
                 </li>
               ))}
             </ul>
@@ -92,18 +92,18 @@ export default function Datenschutz() {
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               5. ANALYTICS
             </h2>
             <p>
-              Diese Website nutzt <strong style={{ color: '#f5f0e8' }}>Plausible Analytics</strong> — eine cookielose, DSGVO-konforme Alternative zu Google Analytics. Es werden keine personenbezogenen Daten übertragen, kein Cookie gesetzt, kein Geräteprofil erstellt. Alle Daten werden auf EU-Servern in Deutschland gespeichert.
+              Diese Website nutzt <strong style={{ color: '#eef3ff' }}>Plausible Analytics</strong> — eine cookielose, DSGVO-konforme Alternative zu Google Analytics. Es werden keine personenbezogenen Daten übertragen, kein Cookie gesetzt, kein Geräteprofil erstellt. Alle Daten werden auf EU-Servern in Deutschland gespeichert.
             </p>
           </section>
 
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               6. IHRE RECHTE
             </h2>
             <p className="mb-3">Nach DSGVO haben Sie das Recht auf:</p>
@@ -118,7 +118,7 @@ export default function Datenschutz() {
                 'Beschwerde bei der Datenschutzbehörde (DSB Österreich, dsb.gv.at)',
               ].map(r => (
                 <li key={r} className="flex gap-3">
-                  <span style={{ color: '#1aedff' }}>✓</span>{r}
+                  <span style={{ color: '#4b8ef5' }}>✓</span>{r}
                 </li>
               ))}
             </ul>
@@ -130,7 +130,7 @@ export default function Datenschutz() {
           <div className="divider-electric" />
 
           <section>
-            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#f5f0e8', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-headline)', color: '#eef3ff', fontSize: '1.3rem', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
               7. DATENSICHERHEIT
             </h2>
             <p>
@@ -138,7 +138,7 @@ export default function Datenschutz() {
             </p>
           </section>
 
-          <p className="text-xs mt-8" style={{ fontFamily: 'var(--font-mono)', color: 'rgba(245,240,232,0.3)' }}>
+          <p className="text-xs mt-8" style={{ fontFamily: 'var(--font-mono)', color: 'rgba(238,243,255,0.3)' }}>
             Stand: {new Date().getFullYear()} · Zahnarzt Notdienst (Privat), Wien
           </p>
         </div>
