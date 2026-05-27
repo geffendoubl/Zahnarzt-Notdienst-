@@ -2,144 +2,104 @@
 
 import { useEffect, useState } from 'react'
 import { ToothSVG } from './ToothSVG'
-import { getTodayClose, isOpenNow, PHONE_HREF, WHATSAPP_HREF } from '@/lib/openingHours'
-
-const PHRASE = 'ZAHNSCHMERZEN?'
+import { getTodayClose, getNextOpening, isOpenNow, PHONE_HREF, WHATSAPP_HREF } from '@/lib/openingHours'
 
 export function Hero() {
-  const [chars, setChars] = useState(0)
-  const [subVisible, setSubVisible] = useState(false)
-  const [ctaVisible, setCtaVisible] = useState(false)
   const [closeTime, setCloseTime] = useState('')
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean | null>(null)
+  const [nextOpening, setNextOpening] = useState<{ label: string; time: string } | null>(null)
 
   useEffect(() => {
+    const isOpen = isOpenNow()
     setCloseTime(getTodayClose())
-    setOpen(isOpenNow())
-
-    let i = 0
-    const delay = setTimeout(() => {
-      const interval = setInterval(() => {
-        i++
-        setChars(i)
-        if (i >= PHRASE.length) {
-          clearInterval(interval)
-          setTimeout(() => setSubVisible(true), 120)
-          setTimeout(() => setCtaVisible(true), 380)
-        }
-      }, 65)
-    }, 200)
-
-    return () => clearTimeout(delay)
+    setOpen(isOpen)
+    setNextOpening(getNextOpening())
   }, [])
-
-  const displayed = PHRASE.slice(0, chars)
-  const done = chars >= PHRASE.length
 
   return (
     <section
       className="relative flex flex-col items-center justify-center overflow-hidden"
       style={{
         minHeight: 'calc(100svh - 7.75rem)',
-        background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(75,142,245,0.07) 0%, transparent 65%), #0d1b2e',
+        background: 'linear-gradient(145deg, #f8faff 0%, #ffffff 45%, #f0f5ff 100%)',
         padding: '4rem 1.5rem 3rem',
       }}
     >
-      {/* Tooth — very subtle, just a hint of context */}
+      {/* Subtle tooth mark */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
         aria-hidden="true"
       >
-        <ToothSVG className="w-[min(50vw,360px)] h-auto" />
+        <ToothSVG className="w-[min(55vw,420px)] h-auto" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 text-center max-w-4xl w-full mx-auto">
 
-        {/* Small label above headline */}
+        {/* Location label */}
         <div
-          className="mb-4 transition-all duration-500"
           style={{
-            opacity: subVisible ? 1 : 0,
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.7rem',
-            letterSpacing: '0.2em',
-            color: 'rgba(75,142,245,0.7)',
+            fontSize: '0.68rem',
+            letterSpacing: '0.22em',
+            color: 'rgba(29,78,216,0.6)',
+            marginBottom: '1.1rem',
           }}
         >
-          ZAHNARZT NOTDIENST · 1020 WIEN
+          ZAHNARZT NOTDIENST · 1020 WIEN LEOPOLDSTADT
         </div>
 
-        {/* Headline */}
+        {/* Static headline — immediate, no delay */}
         <h1
-          className="mb-6"
           style={{
             fontFamily: 'var(--font-headline)',
-            fontSize: 'clamp(3.2rem, 9vw, 8rem)',
-            lineHeight: '0.94',
+            fontSize: 'clamp(3.4rem, 9vw, 8.5rem)',
+            lineHeight: 0.93,
             letterSpacing: '0.01em',
-            color: '#eef3ff',
+            color: '#0f172a',
+            marginBottom: '1.5rem',
           }}
         >
-          {displayed}
-          {!done && (
-            <span className="animate-blink" style={{ color: '#4b8ef5' }}>|</span>
-          )}
+          WIR SIND<br />
+          <span style={{ color: '#dc2626' }}>FÜR SIE DA.</span>
         </h1>
 
-        {/* Sub-headline */}
-        <div
-          className="mb-10 transition-all duration-400"
-          style={{ opacity: subVisible ? 1 : 0, transform: subVisible ? 'translateY(0)' : 'translateY(6px)' }}
+        {/* Live status sub-headline */}
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(1.05rem, 2.5vw, 1.4rem)',
+            color: '#374151',
+            lineHeight: 1.55,
+            marginBottom: '0.7rem',
+          }}
         >
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(1.05rem, 2.5vw, 1.55rem)',
-              color: 'rgba(238,243,255,0.8)',
-              fontWeight: 400,
-              lineHeight: 1.5,
-            }}
-          >
-            {open
-              ? <>Wir sind für Sie da — heute bis{' '}
-                  <strong style={{ color: '#eef3ff', fontWeight: 600 }}>{closeTime} Uhr</strong>
-                  {' '}geöffnet.
-                </>
-              : <>Wir sind heute leider geschlossen.{' '}
-                  <span style={{ color: 'rgba(238,243,255,0.55)' }}>Schauen Sie auf unsere Öffnungszeiten.</span>
-                </>
-            }
-          </p>
-          <p
-            className="mt-2.5"
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.85rem, 1.6vw, 1rem)',
-              color: 'rgba(238,243,255,0.38)',
-            }}
-          >
-            Akute Schmerzen · Gebrochene Zähne · Schwellungen · Notfälle aller Art
-          </p>
-        </div>
+          {open === true && closeTime && (
+            <>Heute bis <strong style={{ color: '#0f172a', fontWeight: 600 }}>{closeTime} Uhr</strong> geöffnet — rufen Sie jetzt an.</>
+          )}
+          {open === false && nextOpening && (
+            <>Gerade geschlossen. Nächste Öffnung: <strong style={{ color: '#0f172a', fontWeight: 600 }}>{nextOpening.label} ab {nextOpening.time} Uhr.</strong></>
+          )}
+          {open === null && (
+            <>Akute Zahnschmerzen? Wir helfen schnell und unkompliziert.</>
+          )}
+        </p>
+        <p style={{ fontSize: '0.88rem', color: '#9ca3af', marginBottom: '2.2rem' }}>
+          Akute Schmerzen · Gebrochene Zähne · Schwellungen · Notfälle aller Art
+        </p>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mx-auto transition-all duration-500"
-          style={{ opacity: ctaVisible ? 1 : 0, transform: ctaVisible ? 'translateY(0)' : 'translateY(12px)' }}
-        >
-          {/* Primary — call */}
+        {/* CTAs — always rendered, no animation gate */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mx-auto">
           <a
             href={PHONE_HREF}
             className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded no-underline transition-all hover:brightness-105 active:scale-[0.99]"
             style={{
-              background: '#e04747',
-              color: '#fff',
+              background: '#dc2626',
+              color: '#ffffff',
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.5rem)',
               letterSpacing: '0.07em',
               textDecoration: 'none',
-              boxShadow: '0 2px 16px rgba(224,71,71,0.28)',
+              boxShadow: '0 4px 20px rgba(220,38,38,0.28)',
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
@@ -148,20 +108,20 @@ export function Hero() {
             JETZT ANRUFEN
           </a>
 
-          {/* Secondary — WhatsApp */}
           <a
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded no-underline transition-all hover:bg-[#1c2e44] active:scale-[0.99]"
+            className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded no-underline transition-all active:scale-[0.99]"
             style={{
-              background: 'rgba(28,46,68,0.8)',
-              color: '#eef3ff',
-              border: '1px solid rgba(75,142,245,0.25)',
+              background: '#ffffff',
+              color: '#0f172a',
+              border: '1.5px solid rgba(29,78,216,0.18)',
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.5rem)',
               letterSpacing: '0.07em',
               textDecoration: 'none',
+              boxShadow: '0 1px 4px rgba(15,23,42,0.06)',
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
@@ -171,31 +131,61 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Trust signals — quiet, not shouting */}
+        {/* Closed state: callback prompt */}
+        {open === false && nextOpening && (
+          <div
+            className="animate-fade-up"
+            style={{
+              background: 'rgba(220,38,38,0.04)',
+              border: '1px solid rgba(220,38,38,0.15)',
+              borderRadius: '6px',
+              padding: '0.8rem 1.1rem',
+              marginTop: '1.25rem',
+              maxWidth: '480px',
+              margin: '1.25rem auto 0',
+            }}
+          >
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#dc2626', letterSpacing: '0.1em', marginBottom: '0.3rem' }}>
+              GESCHLOSSEN
+            </p>
+            <p style={{ fontSize: '0.88rem', color: '#374151', lineHeight: 1.5 }}>
+              Hinterlassen Sie Ihre Nummer —{' '}
+              <a href="/termin" style={{ color: '#1d4ed8', fontWeight: 500, textDecoration: 'none' }}>
+                wir rufen beim nächsten Öffnen zurück
+              </a>.
+            </p>
+          </div>
+        )}
+
+        {/* Trust bar */}
         <div
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 transition-all duration-700"
           style={{
-            opacity: ctaVisible ? 0.55 : 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.4rem 1.1rem',
+            marginTop: '1.75rem',
             fontFamily: 'var(--font-mono)',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
-            color: 'rgba(238,243,255,0.45)',
+            color: '#9ca3af',
           }}
         >
           <span>⭐ 4.5 von 5</span>
-          <span>·</span>
+          <span aria-hidden>·</span>
           <span>55 Bewertungen</span>
-          <span>·</span>
+          <span aria-hidden>·</span>
           <span>Privatordination</span>
-          <span>·</span>
+          <span aria-hidden>·</span>
           <span>1020 Wien</span>
         </div>
       </div>
 
-      {/* Gentle bottom fade */}
+      {/* Fade to next section */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(transparent, #0d1b2e)' }}
+        className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+        style={{ background: 'linear-gradient(transparent, #ffffff)' }}
         aria-hidden="true"
       />
     </section>

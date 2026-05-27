@@ -24,7 +24,7 @@ export function Navbar() {
       className="sticky z-40 w-full"
       style={{
         top: '2.75rem',
-        background: 'rgba(13, 27, 46, 0.95)',
+        background: 'rgba(255,255,255,0.97)',
         borderBottom: '1px solid rgba(75, 142, 245, 0.1)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
@@ -38,17 +38,17 @@ export function Navbar() {
           <svg width="18" height="26" viewBox="0 0 120 260" fill="none" aria-hidden="true">
             <path
               d="M26 22 C20 10,26 2,34 4 C40 6,45 14,50 12 C55 10,60 2,67 4 C74 6,79 14,84 12 C89 10,95 4,100 8 C106 12,107 22,105 34 C103 50,100 66,97 80 C95 88,93 95,91 102 C89 110,88 118,88 126 C88 136,89 148,89 158 C89 170,87 182,85 192 C83 200,81 208,79 214 C78 219,75 222,72 220 C69 218,67 211,66 202 C65 192,64 178,64 164 C64 152,63 142,62 136 C61 142,60 152,60 164 C60 178,59 192,58 202 C57 211,55 218,52 220 C49 222,46 219,45 214 C43 208,41 200,39 192 C37 182,35 170,35 158 C35 148,36 136,36 126 C36 118,35 110,33 102 C31 95,29 88,27 80 C24 66,21 50,19 34 C17 22,20 12,26 22 Z"
-              stroke="#4b8ef5"
+              stroke="#1d4ed8"
               strokeWidth="5"
               fill="none"
             />
           </svg>
           <div>
-            <div style={{ fontFamily: 'var(--font-headline)', fontSize: '1rem', letterSpacing: '0.08em', color: '#eef3ff', lineHeight: 1.1 }}>
-              ZAHNARZT <span style={{ color: '#4b8ef5' }}>NOTDIENST</span>
+            <div style={{ fontFamily: 'var(--font-headline)', fontSize: '1rem', letterSpacing: '0.08em', color: '#0f172a', lineHeight: 1.1 }}>
+              ZAHNARZT <span style={{ color: '#1d4ed8' }}>NOTDIENST</span>
             </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(238,243,255,0.35)', marginTop: 2 }}>
-              <strong style={{ color: 'rgba(238,243,255,0.6)' }}>PRIVAT</strong> · 1020 WIEN
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.18em', color: '#9ca3af', marginTop: 2 }}>
+              <strong style={{ color: '#4b5563' }}>PRIVAT</strong> · 1020 WIEN
             </div>
           </div>
         </Link>
@@ -63,9 +63,9 @@ export function Navbar() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.8rem',
                 textDecoration: 'none',
-                color: pathname === href ? '#eef3ff' : 'rgba(238,243,255,0.45)',
+                color: pathname === href ? '#0f172a' : '#9ca3af',
                 fontWeight: pathname === href ? 500 : 400,
-                borderBottom: pathname === href ? '1px solid rgba(75,142,245,0.6)' : '1px solid transparent',
+                borderBottom: pathname === href ? '1px solid rgba(29,78,216,0.5)' : '1px solid transparent',
                 paddingBottom: '1px',
                 transition: 'color 0.15s',
               }}
@@ -79,7 +79,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           <span
             className="hidden md:block tabular-nums"
-            style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'rgba(238,243,255,0.28)', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#9ca3af', letterSpacing: '0.05em' }}
           >
             <LiveClock />
           </span>
@@ -87,7 +87,7 @@ export function Navbar() {
             href={PHONE_HREF}
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded no-underline transition-all hover:brightness-105"
             style={{
-              background: '#e04747',
+              background: '#dc2626',
               color: '#fff',
               fontFamily: 'var(--font-headline)',
               fontSize: '0.82rem',
@@ -104,7 +104,7 @@ export function Navbar() {
             className="lg:hidden p-2"
             onClick={() => setOpen(!open)}
             aria-label="Menü"
-            style={{ color: 'rgba(238,243,255,0.7)' }}
+            style={{ color: '#374151' }}
           >
             <div className="w-5 h-px bg-current mb-1.5 transition-all" style={{ transform: open ? 'rotate(45deg) translate(0,4px)' : '' }} />
             <div className="w-5 h-px bg-current mb-1.5 transition-all" style={{ opacity: open ? 0 : 1 }} />
@@ -117,7 +117,7 @@ export function Navbar() {
       {open && (
         <div
           className="lg:hidden absolute top-full left-0 right-0 animate-slide-down"
-          style={{ background: 'rgba(13,27,46,0.98)', borderBottom: '1px solid rgba(75,142,245,0.1)', backdropFilter: 'blur(16px)' }}
+          style={{ background: 'rgba(255,255,255,0.99)', borderBottom: '1px solid rgba(29,78,216,0.08)', backdropFilter: 'blur(16px)' }}
         >
           <div className="px-4 py-4 flex flex-col gap-0.5">
             {links.map(({ href, label }) => (
@@ -130,8 +130,8 @@ export function Navbar() {
                   fontSize: '1rem',
                   fontWeight: pathname === href ? 600 : 400,
                   textDecoration: 'none',
-                  color: pathname === href ? '#eef3ff' : 'rgba(238,243,255,0.6)',
-                  background: pathname === href ? 'rgba(75,142,245,0.06)' : 'transparent',
+                  color: pathname === href ? '#0f172a' : '#4b5563',
+                  background: pathname === href ? 'rgba(29,78,216,0.05)' : 'transparent',
                 }}
                 onClick={() => setOpen(false)}
               >
@@ -141,7 +141,7 @@ export function Navbar() {
             <a
               href={PHONE_HREF}
               className="mt-3 py-3 px-3 rounded text-center no-underline"
-              style={{ background: '#e04747', color: '#fff', fontFamily: 'var(--font-headline)', fontSize: '1.1rem', letterSpacing: '0.08em', textDecoration: 'none' }}
+              style={{ background: '#dc2626', color: '#fff', fontFamily: 'var(--font-headline)', fontSize: '1.1rem', letterSpacing: '0.08em', textDecoration: 'none' }}
             >
               JETZT ANRUFEN
             </a>

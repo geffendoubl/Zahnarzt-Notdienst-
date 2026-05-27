@@ -23,14 +23,14 @@ export default function Zeiten() {
   ]
 
   return (
-    <div style={{ background: '#0d1b2e' }}>
+    <div style={{ background: '#ffffff' }}>
       {/* Header */}
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto relative">
           <span className="section-number" aria-hidden="true">04</span>
           <span
             className="text-xs tracking-[0.25em] mb-3 block"
-            style={{ fontFamily: 'var(--font-mono)', color: '#4b8ef5' }}
+            style={{ fontFamily: 'var(--font-mono)', color: '#1d4ed8' }}
           >
             ÖFFNUNGSZEITEN
           </span>
@@ -39,25 +39,25 @@ export default function Zeiten() {
               fontFamily: 'var(--font-headline)',
               fontSize: 'clamp(3rem, 8vw, 7rem)',
               lineHeight: 0.92,
-              color: '#eef3ff',
+              color: '#0f172a',
               letterSpacing: '0.01em',
             }}
           >
             TÄGLICH<br />
-            <span style={{ color: '#4b8ef5' }}>FÜR SIE DA.</span>
+            <span style={{ color: '#1d4ed8' }}>FÜR SIE DA.</span>
           </h1>
 
           {today !== null && (
             <div
               className="mt-6 inline-flex items-center gap-3 px-4 py-2.5 rounded-sm"
               style={{
-                background: open ? 'rgba(34,197,94,0.08)' : 'rgba(224,71,71,0.08)',
-                border: `1px solid ${open ? 'rgba(34,197,94,0.3)' : 'rgba(224,71,71,0.3)'}`,
+                background: open ? 'rgba(22,163,74,0.06)' : 'rgba(220,38,38,0.06)',
+                border: `1px solid ${open ? 'rgba(22,163,74,0.25)' : 'rgba(220,38,38,0.2)'}`,
               }}
             >
               <span
                 className="animate-dot-pulse text-sm"
-                style={{ color: open ? '#22c55e' : '#e04747' }}
+                style={{ color: open ? '#16a34a' : '#dc2626' }}
               >
                 ●
               </span>
@@ -65,7 +65,7 @@ export default function Zeiten() {
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.75rem',
-                  color: open ? '#22c55e' : '#e04747',
+                  color: open ? '#16a34a' : '#dc2626',
                   letterSpacing: '0.1em',
                 }}
               >
@@ -94,15 +94,15 @@ export default function Zeiten() {
                   key={day}
                   className="flex items-center justify-between px-5 py-4"
                   style={{
-                    borderBottom: i < rows.length - 1 ? '1px solid rgba(75,142,245,0.08)' : undefined,
-                    background: isToday ? 'rgba(75,142,245,0.06)' : 'transparent',
+                    borderBottom: i < rows.length - 1 ? '1px solid rgba(29,78,216,0.06)' : undefined,
+                    background: isToday ? 'rgba(29,78,216,0.05)' : 'transparent',
                   }}
                 >
                   <div className="flex items-center gap-3">
                     {isToday && (
                       <span
                         className="animate-dot-pulse"
-                        style={{ fontSize: '0.5rem', color: open ? '#22c55e' : '#e04747' }}
+                        style={{ fontSize: '0.5rem', color: open ? '#16a34a' : '#dc2626' }}
                       >
                         ●
                       </span>
@@ -111,7 +111,7 @@ export default function Zeiten() {
                       style={{
                         fontFamily: isToday ? 'var(--font-headline)' : 'var(--font-body)',
                         fontSize: isToday ? '1.15rem' : '0.95rem',
-                        color: isToday ? '#4b8ef5' : 'rgba(238,243,255,0.75)',
+                        color: isToday ? '#1d4ed8' : '#374151',
                         letterSpacing: isToday ? '0.06em' : 'normal',
                         fontWeight: isToday ? undefined : 400,
                       }}
@@ -123,9 +123,9 @@ export default function Zeiten() {
                         className="text-xs px-1.5 py-0.5 rounded"
                         style={{
                           fontFamily: 'var(--font-mono)',
-                          background: 'rgba(224,71,71,0.12)',
-                          color: '#e04747',
-                          border: '1px solid rgba(224,71,71,0.25)',
+                          background: 'rgba(220,38,38,0.08)',
+                          color: '#dc2626',
+                          border: '1px solid rgba(220,38,38,0.15)',
                         }}
                       >
                         {note}
@@ -136,7 +136,7 @@ export default function Zeiten() {
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '0.85rem',
-                      color: isSat ? '#e04747' : isToday ? '#eef3ff' : 'rgba(238,243,255,0.55)',
+                      color: isSat ? '#dc2626' : isToday ? '#0f172a' : '#6b7280',
                       letterSpacing: '0.05em',
                     }}
                   >
@@ -151,18 +151,18 @@ export default function Zeiten() {
           <div
             className="mt-5 p-4 rounded-sm"
             style={{
-              background: 'rgba(224,71,71,0.07)',
-              border: '1px solid rgba(224,71,71,0.22)',
+              background: 'rgba(220,38,38,0.06)',
+              border: '1px solid rgba(220,38,38,0.15)',
             }}
           >
             <div
               className="text-xs font-bold mb-1.5"
-              style={{ fontFamily: 'var(--font-headline)', color: '#e04747', letterSpacing: '0.12em' }}
+              style={{ fontFamily: 'var(--font-headline)', color: '#dc2626', letterSpacing: '0.12em' }}
             >
               SAMSTAG NOTDIENST
             </div>
-            <p className="text-sm" style={{ color: 'rgba(238,243,255,0.65)' }}>
-              Samstags sind wir ausschließlich von <strong style={{ color: '#e04747' }}>20:00 bis 22:30 Uhr</strong> für echte Notfälle geöffnet.
+            <p className="text-sm" style={{ color: '#4b5563' }}>
+              Samstags sind wir ausschließlich von <strong style={{ color: '#dc2626' }}>20:00 bis 22:30 Uhr</strong> für echte Notfälle geöffnet.
               Kein regulärer Terminbetrieb — nur Akutversorgung.
             </p>
           </div>
@@ -170,11 +170,11 @@ export default function Zeiten() {
       </section>
 
       {/* Location */}
-      <section className="py-12 px-4 sm:px-6" style={{ background: '#152234' }}>
+      <section className="py-12 px-4 sm:px-6" style={{ background: '#f4f7ff' }}>
         <div className="max-w-4xl mx-auto">
           <h2
             className="mb-8"
-            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#eef3ff', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#0f172a', letterSpacing: '0.05em' }}
           >
             WIE SIE UNS FINDEN
           </h2>
@@ -185,22 +185,22 @@ export default function Zeiten() {
               >
                 <div
                   className="text-xs mb-2 tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: '#6b6b8a' }}
+                  style={{ fontFamily: 'var(--font-mono)', color: '#9ca3af' }}
                 >
                   ADRESSE
                 </div>
-                <p style={{ color: '#eef3ff' }}>
+                <p style={{ color: '#0f172a' }}>
                   Darwingasse 37<br />1020 Wien (Leopoldstadt)
                 </p>
               </div>
               <div className="p-4 rounded-sm card-dark">
                 <div
                   className="text-xs mb-2 tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: '#6b6b8a' }}
+                  style={{ fontFamily: 'var(--font-mono)', color: '#9ca3af' }}
                 >
                   ÖFFENTLICHE VERKEHRSMITTEL
                 </div>
-                <ul className="flex flex-col gap-1.5 text-sm" style={{ color: 'rgba(238,243,255,0.7)' }}>
+                <ul className="flex flex-col gap-1.5 text-sm" style={{ color: '#374151' }}>
                   <li>🟠 U2 Taborstraße — ca. 5 Min. Fußweg</li>
                   <li>🚌 Linie 5, 31 — Darwingasse</li>
                 </ul>
@@ -208,17 +208,17 @@ export default function Zeiten() {
               <a
                 href={PHONE_HREF}
                 className="py-3.5 px-5 rounded-sm text-center no-underline font-bold transition-all hover:brightness-110"
-                style={{ background: '#e04747', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.2rem', letterSpacing: '0.06em' }}
+                style={{ background: '#dc2626', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-headline)', fontSize: '1.2rem', letterSpacing: '0.06em' }}
               >
                 JETZT ANRUFEN
               </a>
             </div>
             <div
               className="rounded-sm overflow-hidden flex items-center justify-center"
-              style={{ background: '#152234', border: '1px solid rgba(75,142,245,0.15)', minHeight: 220 }}
+              style={{ background: '#f4f7ff', border: '1px solid rgba(29,78,216,0.12)', minHeight: 220 }}
             >
               <div className="text-center p-6">
-                <p className="text-sm mb-3" style={{ color: 'rgba(238,243,255,0.4)', fontFamily: 'var(--font-mono)' }}>
+                <p className="text-sm mb-3" style={{ color: '#9ca3af', fontFamily: 'var(--font-mono)' }}>
                   KARTE LADEN (COOKIE-ZUSTIMMUNG ERFORDERLICH)
                 </p>
                 <a
@@ -226,7 +226,7 @@ export default function Zeiten() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block py-2 px-4 rounded-sm no-underline text-sm transition-all hover:brightness-110"
-                  style={{ background: 'rgba(75,142,245,0.1)', color: '#4b8ef5', textDecoration: 'none', border: '1px solid rgba(75,142,245,0.3)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.1em' }}
+                  style={{ background: 'rgba(29,78,216,0.08)', color: '#1d4ed8', textDecoration: 'none', border: '1px solid rgba(29,78,216,0.22)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.1em' }}
                 >
                   IN GOOGLE MAPS ÖFFNEN →
                 </a>

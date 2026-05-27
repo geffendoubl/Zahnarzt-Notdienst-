@@ -46,23 +46,21 @@ export function StatusBanner() {
     gap: '0.6rem',
     padding: '0.55rem 1rem',
     minHeight: '2.75rem',
-    background: 'rgba(13,27,46,0.97)',
-    borderBottom: '1px solid rgba(75,142,245,0.12)',
     backdropFilter: 'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
   }
 
-  if (!state) return <div style={{ ...base, position: 'fixed' }} />
+  if (!state) return <div style={{ ...base, background: 'rgba(255,255,255,0.97)', borderBottom: '1px solid rgba(29,78,216,0.08)' }} />
 
   const { open, satEmergency, closeTime, next, countdown } = state
 
   if (satEmergency) {
     return (
-      <div style={{ ...base, borderBottom: '1px solid rgba(224,71,71,0.2)' }}>
-        <span className="animate-dot-pulse" style={{ fontSize: '0.5rem', color: '#22c55e' }}>●</span>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.12em', color: '#eef3ff' }}>
+      <div style={{ ...base, background: 'rgba(220,38,38,0.05)', borderBottom: '1px solid rgba(220,38,38,0.2)' }}>
+        <span className="animate-dot-pulse" style={{ fontSize: '0.5rem', color: '#16a34a' }}>●</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.76rem', letterSpacing: '0.1em', color: '#0f172a' }}>
           Samstag Notdienst — geöffnet bis{' '}
-          <strong style={{ color: '#e04747' }}>22:30 Uhr</strong>
+          <strong style={{ color: '#dc2626' }}>22:30 Uhr</strong>
         </span>
       </div>
     )
@@ -70,23 +68,23 @@ export function StatusBanner() {
 
   if (open) {
     return (
-      <div style={base}>
-        <span className="animate-dot-pulse" style={{ fontSize: '0.5rem', color: '#22c55e' }}>●</span>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.1em', color: 'rgba(238,243,255,0.75)' }}>
+      <div style={{ ...base, background: 'rgba(22,163,74,0.06)', borderBottom: '1px solid rgba(22,163,74,0.22)' }}>
+        <span className="animate-dot-pulse" style={{ fontSize: '0.55rem', color: '#16a34a' }}>●</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', letterSpacing: '0.1em', color: '#16a34a', fontWeight: 600 }}>
           Jetzt geöffnet —{' '}
-          <strong style={{ color: '#eef3ff' }}>bis {closeTime} Uhr</strong>
+          <strong style={{ color: '#0f172a', fontWeight: 700 }}>bis {closeTime} Uhr</strong>
         </span>
       </div>
     )
   }
 
   return (
-    <div style={base}>
-      <span style={{ fontSize: '0.5rem', color: 'rgba(238,243,255,0.3)' }}>●</span>
-      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.1em', color: 'rgba(238,243,255,0.5)' }}>
+    <div style={{ ...base, background: 'rgba(255,255,255,0.97)', borderBottom: '1px solid rgba(29,78,216,0.08)' }}>
+      <span style={{ fontSize: '0.5rem', color: '#d1d5db' }}>●</span>
+      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', letterSpacing: '0.08em', color: '#6b7280' }}>
         Geschlossen — nächste Öffnung:{' '}
-        <strong style={{ color: 'rgba(238,243,255,0.8)' }}>{next.label} ab {next.time} Uhr</strong>
-        <span style={{ color: 'rgba(75,142,245,0.6)', marginLeft: '0.5rem' }}>· in {countdown}</span>
+        <strong style={{ color: '#0f172a' }}>{next.label} ab {next.time} Uhr</strong>
+        <span style={{ color: 'rgba(29,78,216,0.55)', marginLeft: '0.5rem' }}>· in {countdown}</span>
       </span>
     </div>
   )

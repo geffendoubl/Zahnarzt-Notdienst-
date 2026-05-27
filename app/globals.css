@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Professional night palette — navy, trusted blue, confident red */
-  --color-ink: #0d1b2e;
-  --color-blue: #4b8ef5;
-  --color-urgent: #e04747;
-  --color-cream: #eef3ff;
-  --color-slate: #152234;
-  --color-slate-light: #1c2e44;
-  --color-muted: #5d7896;
+  /* Bright professional palette */
+  --color-bg: #ffffff;
+  --color-surface: #f4f7ff;
+  --color-blue: #1d4ed8;
+  --color-urgent: #dc2626;
+  --color-ink: #0f172a;
+  --color-muted: #6b7280;
 
   --font-headline: var(--font-bebas), "Bebas Neue", sans-serif;
   --font-mono: var(--font-space-mono), "Space Mono", monospace;
@@ -26,21 +25,21 @@ html {
 }
 
 body {
-  background-color: #0d1b2e;
-  color: #eef3ff;
+  background-color: #ffffff;
+  color: #0f172a;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* Very subtle noise — texture, not grain */
+/* Very subtle noise grain on light bg */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.015;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 180px 180px;
@@ -48,8 +47,8 @@ body::after {
 
 /* ─── Keyframes ─────────────────────────────────────────── */
 @keyframes tooth-breathe {
-  0%, 100% { opacity: 0.04; transform: scale(1) translateY(0); }
-  50%       { opacity: 0.065; transform: scale(1.01) translateY(-5px); }
+  0%, 100% { opacity: 0.07; transform: scale(1) translateY(0); }
+  50%       { opacity: 0.13; transform: scale(1.01) translateY(-5px); }
 }
 
 @keyframes blink-cursor {
@@ -59,7 +58,7 @@ body::after {
 
 @keyframes dot-pulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
+  50%       { opacity: 0.35; }
 }
 
 @keyframes slide-down {
@@ -77,6 +76,12 @@ body::after {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* WhatsApp pulse rings */
+@keyframes wa-ring {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0;    }
+}
+
 /* ─── Animation classes ─────────────────────────────────── */
 .animate-tooth-breathe  { animation: tooth-breathe 6s ease-in-out infinite; }
 .animate-blink          { animation: blink-cursor 1s step-end infinite; }
@@ -84,58 +89,48 @@ body::after {
 .animate-slide-down     { animation: slide-down 0.3s ease-out forwards; }
 .animate-fade-in        { animation: fade-in 0.4s ease-out forwards; }
 .animate-fade-up        { animation: fade-up 0.5s ease-out forwards; }
+.animate-wa-ring        { animation: wa-ring 2.2s ease-out infinite; }
+.animate-wa-ring-delay  { animation: wa-ring 2.2s ease-out 0.8s infinite; }
 
 /* ─── Layout helpers ────────────────────────────────────── */
+
+/* Section numbers hidden — editorial pattern removed */
 .section-number {
-  font-family: var(--font-headline);
-  font-size: clamp(7rem, 18vw, 15rem);
-  line-height: 0.9;
-  color: rgba(75, 142, 245, 0.04);
-  position: absolute;
-  right: -0.05em;
-  top: -0.12em;
-  user-select: none;
-  pointer-events: none;
-  letter-spacing: -0.04em;
-  overflow: hidden;
+  display: none;
 }
 
 /* ─── Component helpers ──────────────────────────────────── */
 .card-dark {
-  background: rgba(21, 34, 52, 0.7);
-  border: 1px solid rgba(75, 142, 245, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(29, 78, 216, 0.1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
-.divider-blue {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(75, 142, 245, 0.2), transparent);
-}
-
-/* legacy alias kept so pages still compile */
+.divider-blue,
 .divider-electric {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(75, 142, 245, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(29, 78, 216, 0.15), transparent);
 }
 
 /* ─── Forms ──────────────────────────────────────────────── */
 input, textarea, select {
-  background: rgba(21, 34, 52, 0.8);
-  border: 1px solid rgba(75, 142, 245, 0.18);
-  color: #eef3ff;
+  background: #f8faff;
+  border: 1px solid rgba(29, 78, 216, 0.15);
+  color: #0f172a;
   font-family: var(--font-body);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: rgba(75, 142, 245, 0.5);
-  box-shadow: 0 0 0 3px rgba(75, 142, 245, 0.08);
+  border-color: rgba(29, 78, 216, 0.4);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.07);
 }
-select option { background: #152234; }
-input[type="checkbox"] { accent-color: #4b8ef5; }
-::placeholder { color: rgba(93, 120, 150, 0.8); }
+select option { background: #ffffff; color: #0f172a; }
+input[type="checkbox"] { accent-color: #1d4ed8; }
+::placeholder { color: #9ca3af; }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: #0d1b2e; }
-::-webkit-scrollbar-thumb { background: rgba(75, 142, 245, 0.2); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(75, 142, 245, 0.38); }
+::-webkit-scrollbar-track { background: #f4f7ff; }
+::-webkit-scrollbar-thumb { background: rgba(29, 78, 216, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(29, 78, 216, 0.35); }
