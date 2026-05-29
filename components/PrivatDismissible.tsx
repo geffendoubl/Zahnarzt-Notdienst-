@@ -24,9 +24,9 @@ export function PrivatDismissible() {
     <div
       className="fixed bottom-24 left-4 right-4 sm:left-auto sm:right-20 sm:w-[340px] z-40 animate-slide-down rounded-lg p-5"
       style={{
-        background: 'rgba(28, 28, 46, 0.97)',
-        border: '1px solid rgba(75, 142, 245, 0.3)',
-        boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 40px rgba(29,78,216,0.06)',
+        background: '#ffffff',
+        border: '1px solid rgba(29,78,216,0.15)',
+        boxShadow: '0 8px 32px rgba(15,23,42,0.12), 0 2px 8px rgba(15,23,42,0.06)',
       }}
       role="dialog"
       aria-label="Hinweis Privatordination"
@@ -36,27 +36,27 @@ export function PrivatDismissible() {
           <span
             className="text-xs px-2 py-0.5 rounded font-bold tracking-widest"
             style={{
-              background: 'rgba(29,78,216,0.1)',
+              background: 'rgba(29,78,216,0.08)',
               color: '#1d4ed8',
-              border: '1px solid rgba(29,78,216,0.22)',
+              border: '1px solid rgba(29,78,216,0.18)',
               fontFamily: 'var(--font-mono)',
             }}
           >
             PRIVAT
           </span>
-          <span className="text-cream text-sm font-semibold">Hinweis</span>
+          <span className="text-sm font-semibold" style={{ color: '#0f172a' }}>Hinweis</span>
         </div>
         <button
           onClick={dismiss}
           aria-label="Schließen"
-          className="text-muted hover:text-cream transition-colors text-xl leading-none mt-0.5"
+          className="transition-colors text-xl leading-none mt-0.5"
           style={{ color: '#9ca3af' }}
         >
           ×
         </button>
       </div>
-      <p className="text-cream/80 text-sm leading-relaxed mb-4">
-        Dies ist eine <strong className="text-cream">Privatordination</strong>.
+      <p className="text-sm leading-relaxed mb-4" style={{ color: '#374151' }}>
+        Dies ist eine <strong style={{ color: '#0f172a' }}>Privatordination</strong>.
         Sie zahlen direkt vor Ort und reichen die Honorarnote bei Ihrer
         Krankenkasse ein — schnell, unbürokratisch, ohne Wartezeit.
       </p>
